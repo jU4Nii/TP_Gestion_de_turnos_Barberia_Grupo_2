@@ -1,4 +1,4 @@
-# TP_Gestion_de_turnos_Barber-a_Grupo_2
+# TP_Gestion_de_turnos_Barberia_Grupo_2
 
 Es un sistema pensado para ayudar a las barberías a organizar sus turnos de atención.
 Permite registrar, modificar y eliminar turnos de forma simple, asignando a cada uno un cliente, un peluquero, una fecha, hora y servicio.
