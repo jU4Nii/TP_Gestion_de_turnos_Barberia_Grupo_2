@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClasesEjercicioPrueba", "ClasesEjercicioPrueba\ClasesEjercicioPrueba.csproj", "{63423243-4209-44D7-A9BC-8A69ED069180}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformABM", "WinformABM\WinformABM.csproj", "{3A338612-564E-4792-8295-A5BC2F0B387F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{63423243-4209-44D7-A9BC-8A69ED069180}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63423243-4209-44D7-A9BC-8A69ED069180}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63423243-4209-44D7-A9BC-8A69ED069180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A338612-564E-4792-8295-A5BC2F0B387F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A338612-564E-4792-8295-A5BC2F0B387F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A338612-564E-4792-8295-A5BC2F0B387F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A338612-564E-4792-8295-A5BC2F0B387F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
