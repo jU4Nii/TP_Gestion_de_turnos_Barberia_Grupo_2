@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using ClasesEjercicioPrueba.Models;
+
+namespace ClasesEjercicioPrueba.Data1
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public DbSet<Cliente> Clientes { get; set; }
+
+        public DbSet<Peluquero> Peluqueros { get; set; }
+
+        public DbSet<Servicio> Servicios { get; set; }
+
+        public DbSet<Turno> Turnos { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(
+                "Server=(localdb)\\MSSQLLocalDB;Database=PruebaEF;Trusted_Connection=True;TrustServerCertificate=True;"
+            );
+        }
+
+
+
+    }
+}
