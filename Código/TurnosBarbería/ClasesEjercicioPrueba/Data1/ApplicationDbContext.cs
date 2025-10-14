@@ -10,13 +10,13 @@ namespace ClasesEjercicioPrueba.Data1
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Cliente> listaClientes { get; set; }
 
-        public DbSet<Peluquero> Peluqueros { get; set; }
+        public DbSet<Peluquero> listaPeluqueros { get; set; }
 
-        public DbSet<Servicio> Servicios { get; set; }
+        public DbSet<Servicio> listaServicios { get; set; }
 
-        public DbSet<Turno> Turnos { get; set; }
+        public DbSet<Turno> listaTurnos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

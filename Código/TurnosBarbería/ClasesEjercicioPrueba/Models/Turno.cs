@@ -11,7 +11,19 @@ namespace ClasesEjercicioPrueba.Models
 
         public int Id { get; set; }
 
-        public DateTime FechaYHora { get; set; }
+        public DateTime Fecha { get; set; }
+
+        public int PeluqueroId { get; set; }
+
+        public Peluquero Peluquero { get; set; }
+
+        public int ClienteId { get; set; }
+
+        public Cliente Cliente { get; set; }
+
+        public int ServicioId { get; set; }
+
+        public Servicio Servicio { get; set; }
 
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WinformABM
 {
-    partial class Baja
+    partial class FormListaTurnos
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -59,7 +59,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(60, 91);
             label3.Name = "label3";
-            label3.Size = new Size(44, 15);
+            label3.Size = new Size(43, 15);
             label3.TabIndex = 4;
             label3.Text = "Turnos";
             // 
@@ -71,6 +71,7 @@
             btnModificar.TabIndex = 5;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+           
             // 
             // btnEliminar
             // 
@@ -80,6 +81,7 @@
             btnEliminar.TabIndex = 6;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+           
             // 
             // Baja
             // 

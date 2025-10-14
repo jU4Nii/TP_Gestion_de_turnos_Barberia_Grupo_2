@@ -10,36 +10,36 @@ namespace ClasesEjercicioPrueba.Repository
         public static void Agregar(Peluquero peluquero)
         {
             using var context = new ApplicationDbContext();
-            context.Peluqueros.Add(peluquero);
+            context.listaPeluqueros.Add(peluquero);
             context.SaveChanges();
         }
 
         public static List<Peluquero> ObtenerTodos()
         {
             using var context = new ApplicationDbContext();
-            return context.Peluqueros.ToList();
+            return context.listaPeluqueros.ToList();
         }
 
         public static Peluquero ObtenerPorId(int id)
         {
             using var context = new ApplicationDbContext();
-            return context.Peluqueros.Find(id);
+            return context.listaPeluqueros.Find(id);
         }
 
         public static void Actualizar(Peluquero peluquero)
         {
             using var context = new ApplicationDbContext();
-            context.Peluqueros.Update(peluquero);
+            context.listaPeluqueros.Update(peluquero);
             context.SaveChanges();
         }
 
         public static void Eliminar(int id)
         {
             using var context = new ApplicationDbContext();
-            var peluquero = context.Peluqueros.Find(id);
+            var peluquero = context.listaPeluqueros.Find(id);
             if (peluquero != null)
             {
-                context.Peluqueros.Remove(peluquero);
+                context.listaPeluqueros.Remove(peluquero);
                 context.SaveChanges();
             }
         }

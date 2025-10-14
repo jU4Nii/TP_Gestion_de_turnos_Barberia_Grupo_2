@@ -10,36 +10,36 @@ namespace ClasesEjercicioPrueba.Repository
         public static void Agregar(Servicio servicio)
         {
             using var context = new ApplicationDbContext();
-            context.Servicios.Add(servicio);
+            context.listaServicios.Add(servicio);
             context.SaveChanges();
         }
 
         public static List<Servicio> ObtenerTodos()
         {
             using var context = new ApplicationDbContext();
-            return context.Servicios.ToList();
+            return context.listaServicios.ToList();
         }
 
         public static Servicio ObtenerPorId(int id)
         {
             using var context = new ApplicationDbContext();
-            return context.Servicios.Find(id);
+            return context.listaServicios.Find(id);
         }
 
         public static void Actualizar(Servicio servicio)
         {
             using var context = new ApplicationDbContext();
-            context.Servicios.Update(servicio);
+            context.listaServicios.Update(servicio);
             context.SaveChanges();
         }
 
         public static void Eliminar(int id)
         {
             using var context = new ApplicationDbContext();
-            var servicio = context.Servicios.Find(id);
+            var servicio = context.listaServicios.Find(id);
             if (servicio != null)
             {
-                context.Servicios.Remove(servicio);
+                context.listaServicios.Remove(servicio);
                 context.SaveChanges();
             }
         }

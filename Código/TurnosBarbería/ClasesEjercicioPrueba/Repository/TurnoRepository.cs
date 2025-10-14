@@ -10,36 +10,36 @@ namespace ClasesEjercicioPrueba.Repository
         public static void Agregar(Turno turno)
         {
             using var context = new ApplicationDbContext();
-            context.Turnos.Add(turno);
+            context.listaTurnos.Add(turno);
             context.SaveChanges();
         }
 
         public static List<Turno> ObtenerTodos()
         {
             using var context = new ApplicationDbContext();
-            return context.Turnos.ToList();
+            return context.listaTurnos.ToList();
         }
 
         public static Turno ObtenerPorId(int id)
         {
             using var context = new ApplicationDbContext();
-            return context.Turnos.Find(id);
+            return context.listaTurnos.Find(id);
         }
 
         public static void Actualizar(Turno turno)
         {
             using var context = new ApplicationDbContext();
-            context.Turnos.Update(turno);
+            context.listaTurnos.Update(turno);
             context.SaveChanges();
         }
 
         public static void Eliminar(int id)
         {
             using var context = new ApplicationDbContext();
-            var turno = context.Turnos.Find(id);
+            var turno = context.listaTurnos.Find(id);
             if (turno != null)
             {
-                context.Turnos.Remove(turno);
+                context.listaTurnos.Remove(turno);
                 context.SaveChanges();
             }
         }
