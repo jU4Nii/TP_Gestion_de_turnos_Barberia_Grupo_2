@@ -3,9 +3,9 @@ using ClasesEjercicioPrueba.Repository;
 
 namespace WinformABM
 {
-    public partial class Form1 : Form
+    public partial class Alta : Form
     {
-        public Form1()
+        public Alta()
         {
             InitializeComponent();
             CargarDatosIniciales();
@@ -23,7 +23,6 @@ namespace WinformABM
             listaPeluqueros.DataSource = PeluqueroRepository.ObtenerTodos();
 
             // Cargar horas (ejemplo: lista fija)
-            listaHoras.DataSource = new List<string> { "09:00", "10:00", "11:00", "12:00", "13:00", "14:00" };
         }
 
         private void btnAgregar_Click_Click(object sender, EventArgs e)
@@ -32,28 +31,7 @@ namespace WinformABM
             var cliente = listaClientes.CurrentRow?.DataBoundItem as Cliente;
             var servicio = listaServicios.CurrentRow?.DataBoundItem as Servicio;
             var peluquero = listaPeluqueros.CurrentRow?.DataBoundItem as Peluquero;
-            var hora = listaHoras.CurrentRow?.Cells[0].Value?.ToString();
-            var fechaTexto = Fecha.Text;
 
-            if (cliente == null || servicio == null || peluquero == null || string.IsNullOrEmpty(hora) || string.IsNullOrEmpty(fechaTexto))
-            {
-                MessageBox.Show("Complete todos los campos.");
-                return;
-            }
-
-            if (!DateTime.TryParse($"{fechaTexto} {hora}", out DateTime fechaYHora))
-            {
-                MessageBox.Show("Fecha u hora inválida.");
-                return;
-            }
-
-            var turno = new Turno
-            {
-                FechaYHora = fechaYHora,
-                // Aquí deberías agregar las propiedades de relación si existen (ejemplo: ClienteId, ServicioId, PeluqueroId)
-            };
-
-            TurnoRepository.Agregar(turno);
             MessageBox.Show("Turno guardado correctamente.");
         }
 
@@ -75,6 +53,11 @@ namespace WinformABM
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
             // Si tienes otro filtro, implementa aquí la lógica
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

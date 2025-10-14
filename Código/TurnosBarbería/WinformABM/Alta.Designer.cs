@@ -1,6 +1,6 @@
 ﻿namespace WinformABM
 {
-    partial class Form1
+    partial class Alta
     {
         /// <summary>
         ///  Required designer variable.
@@ -36,16 +36,19 @@
             label5 = new Label();
             label6 = new Label();
             listaServicios = new DataGridView();
-            listaPeluqueros = new DataGridView();
-            Fecha = new TextBox();
-            listaHoras = new DataGridView();
             btnCancelar = new Button();
             btnAgregar = new Button();
             listaClientes = new DataGridView();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            listaServicio = new DataGridView();
+            listaPeluqueros = new DataGridView();
+            dataGridView3 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)listaServicios).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)listaPeluqueros).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)listaHoras).BeginInit();
             ((System.ComponentModel.ISupportInitialize)listaClientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)listaServicio).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)listaPeluqueros).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -87,7 +90,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(103, 213);
+            label4.Location = new Point(103, 226);
             label4.Name = "label4";
             label4.Size = new Size(61, 15);
             label4.TabIndex = 10;
@@ -96,7 +99,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(103, 291);
+            label5.Location = new Point(103, 309);
             label5.Name = "label5";
             label5.Size = new Size(38, 15);
             label5.TabIndex = 11;
@@ -105,7 +108,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(241, 291);
+            label6.Location = new Point(419, 309);
             label6.Name = "label6";
             label6.Size = new Size(33, 15);
             label6.TabIndex = 12;
@@ -120,33 +123,6 @@
             listaServicios.Size = new Size(204, 25);
             listaServicios.TabIndex = 13;
             listaServicios.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // listaPeluqueros
-            // 
-            listaPeluqueros.BackgroundColor = SystemColors.ButtonHighlight;
-            listaPeluqueros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listaPeluqueros.Location = new Point(103, 231);
-            listaPeluqueros.Name = "listaPeluqueros";
-            listaPeluqueros.Size = new Size(204, 25);
-            listaPeluqueros.TabIndex = 14;
-            // 
-            // Fecha
-            // 
-            Fecha.ForeColor = SystemColors.WindowFrame;
-            Fecha.Location = new Point(103, 307);
-            Fecha.Name = "Fecha";
-            Fecha.Size = new Size(78, 23);
-            Fecha.TabIndex = 15;
-            Fecha.Text = "DD/MM/AA";
-            // 
-            // listaHoras
-            // 
-            listaHoras.BackgroundColor = SystemColors.ButtonHighlight;
-            listaHoras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listaHoras.Location = new Point(241, 307);
-            listaHoras.Name = "listaHoras";
-            listaHoras.Size = new Size(204, 25);
-            listaHoras.TabIndex = 16;
             // 
             // btnCancelar
             // 
@@ -176,17 +152,62 @@
             listaClientes.Size = new Size(557, 25);
             listaClientes.TabIndex = 20;
             // 
-            // Form1
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(103, 327);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(229, 23);
+            dateTimePicker1.TabIndex = 21;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.Location = new Point(419, 327);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.ShowUpDown = true;
+            dateTimePicker2.Size = new Size(200, 23);
+            dateTimePicker2.TabIndex = 22;
+            dateTimePicker2.Value = new DateTime(2025, 10, 14, 16, 56, 0, 0);
+            // 
+            // listaServicio
+            // 
+            listaServicio.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listaServicio.Location = new Point(103, 185);
+            listaServicio.Name = "listaServicio";
+            listaServicio.Size = new Size(204, 25);
+            listaServicio.TabIndex = 23;
+            // 
+            // listaPeluqueros
+            // 
+            listaPeluqueros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listaPeluqueros.Location = new Point(103, 264);
+            listaPeluqueros.Name = "listaPeluqueros";
+            listaPeluqueros.Size = new Size(204, 25);
+            listaPeluqueros.TabIndex = 25;
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Location = new Point(103, 244);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.Size = new Size(204, 25);
+            dataGridView3.TabIndex = 24;
+            // 
+            // Alta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(791, 450);
+            Controls.Add(listaPeluqueros);
+            Controls.Add(dataGridView3);
+            Controls.Add(listaServicio);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
             Controls.Add(listaClientes);
             Controls.Add(btnAgregar);
             Controls.Add(btnCancelar);
-            Controls.Add(listaHoras);
-            Controls.Add(Fecha);
-            Controls.Add(listaPeluqueros);
             Controls.Add(listaServicios);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -195,12 +216,13 @@
             Controls.Add(nuevoturno);
             Controls.Add(Cliente);
             Controls.Add(label1);
-            Name = "Form1";
+            Name = "Alta";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)listaServicios).EndInit();
-            ((System.ComponentModel.ISupportInitialize)listaPeluqueros).EndInit();
-            ((System.ComponentModel.ISupportInitialize)listaHoras).EndInit();
             ((System.ComponentModel.ISupportInitialize)listaClientes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)listaServicio).EndInit();
+            ((System.ComponentModel.ISupportInitialize)listaPeluqueros).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -214,11 +236,13 @@
         private Label label5;
         private Label label6;
         private DataGridView listaServicios;
-        private DataGridView listaPeluqueros;
-        private TextBox Fecha;
-        private DataGridView listaHoras;
         private Button btnCancelar;
         private Button btnAgregar;
         private DataGridView listaClientes;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
+        private DataGridView listaServicio;
+        private DataGridView listaPeluqueros;
+        private DataGridView dataGridView3;
     }
 }
