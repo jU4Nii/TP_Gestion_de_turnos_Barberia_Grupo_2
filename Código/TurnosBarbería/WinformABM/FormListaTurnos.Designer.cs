@@ -17,32 +17,14 @@
 
         private void InitializeComponent()
         {
-            txtBuscar = new TextBox();
-            listaTurnos = new DataGridView();
             label2 = new Label();
             label3 = new Label();
-            btnModificar = new Button();
+            btnAgregar = new Button();
+            btnEditar = new Button();
             btnEliminar = new Button();
-            ((System.ComponentModel.ISupportInitialize)listaTurnos).BeginInit();
+            dataGridViewTurnos = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTurnos).BeginInit();
             SuspendLayout();
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.BackColor = SystemColors.ControlLightLight;
-            txtBuscar.ForeColor = Color.Gray;
-            txtBuscar.Location = new Point(60, 109);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(739, 23);
-            txtBuscar.TabIndex = 1;
-            txtBuscar.Text = "Buscar turnos...";
-            // 
-            // listaTurnos
-            // 
-            listaTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listaTurnos.Location = new Point(60, 119);
-            listaTurnos.Name = "listaTurnos";
-            listaTurnos.Size = new Size(739, 25);
-            listaTurnos.TabIndex = 2;
             // 
             // label2
             // 
@@ -63,50 +45,69 @@
             label3.TabIndex = 4;
             label3.Text = "Turnos";
             // 
-            // btnModificar
+            // btnAgregar
             // 
-            btnModificar.Location = new Point(643, 160);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(75, 23);
-            btnModificar.TabIndex = 5;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
-           
+            btnAgregar.Location = new Point(60, 275);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(129, 23);
+            btnAgregar.TabIndex = 7;
+            btnAgregar.Text = "Agregar Turno";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(195, 275);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(153, 23);
+            btnEditar.TabIndex = 8;
+            btnEditar.Text = "Editar Turno";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(724, 160);
+            btnEliminar.Location = new Point(354, 275);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(75, 23);
-            btnEliminar.TabIndex = 6;
-            btnEliminar.Text = "Eliminar";
+            btnEliminar.Size = new Size(136, 23);
+            btnEliminar.TabIndex = 9;
+            btnEliminar.Text = "Eliminar Turno";
             btnEliminar.UseVisualStyleBackColor = true;
-           
+            btnEliminar.Click += btnEliminar_Click;
             // 
-            // Baja
+            // dataGridViewTurnos
+            // 
+            dataGridViewTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewTurnos.Location = new Point(60, 109);
+            dataGridViewTurnos.Name = "dataGridViewTurnos";
+            dataGridViewTurnos.Size = new Size(430, 150);
+            dataGridViewTurnos.TabIndex = 10;
+            // 
+            // FormListaTurnos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(997, 450);
+            Controls.Add(dataGridViewTurnos);
             Controls.Add(btnEliminar);
-            Controls.Add(btnModificar);
-            Controls.Add(txtBuscar);
+            Controls.Add(btnEditar);
+            Controls.Add(btnAgregar);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(listaTurnos);
-            Name = "Baja";
+            Name = "FormListaTurnos";
             Text = "BajaModificacion";
-            ((System.ComponentModel.ISupportInitialize)listaTurnos).EndInit();
+            Load += FormListaTurnos_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTurnos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private TextBox txtBuscar;
-        private DataGridView listaTurnos;
         private Label label2;
         private Label label3;
-        private Button btnModificar;
+        private Button btnAgregar;
+        private Button btnEditar;
         private Button btnEliminar;
+        private DataGridView dataGridViewTurnos;
     }
 }

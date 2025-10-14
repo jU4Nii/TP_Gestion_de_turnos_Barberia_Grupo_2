@@ -33,15 +33,12 @@ namespace ClasesEjercicioPrueba.Repository
             context.SaveChanges();
         }
 
-        public static void Eliminar(int id)
+        public static void Eliminar(Turno turno)
         {
             using var context = new ApplicationDbContext();
-            var turno = context.listaTurnos.Find(id);
-            if (turno != null)
-            {
-                context.listaTurnos.Remove(turno);
-                context.SaveChanges();
-            }
+            context.listaTurnos.Remove(turno);
+            context.SaveChanges();
         }
+
     }
 }

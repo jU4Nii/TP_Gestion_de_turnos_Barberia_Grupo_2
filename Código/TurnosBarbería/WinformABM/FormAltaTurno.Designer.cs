@@ -37,9 +37,9 @@
             btnCancelar = new Button();
             btnAgregar = new Button();
             comboBox1 = new ComboBox();
-            comboCliente = new ComboBox();
-            comboServicio = new ComboBox();
-            comboPeluquero = new ComboBox();
+            listaClientes = new ComboBox();
+            listaServicios = new ComboBox();
+            listaPeluqueros = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
             SuspendLayout();
             // 
@@ -122,29 +122,29 @@
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 26;
             // 
-            // comboCliente
+            // listaClientes
             // 
-            comboCliente.FormattingEnabled = true;
-            comboCliente.Location = new Point(103, 101);
-            comboCliente.Name = "comboCliente";
-            comboCliente.Size = new Size(536, 23);
-            comboCliente.TabIndex = 27;
+            listaClientes.FormattingEnabled = true;
+            listaClientes.Location = new Point(103, 101);
+            listaClientes.Name = "listaClientes";
+            listaClientes.Size = new Size(536, 23);
+            listaClientes.TabIndex = 27;
             // 
-            // comboServicio
+            // listaServicios
             // 
-            comboServicio.FormattingEnabled = true;
-            comboServicio.Location = new Point(103, 165);
-            comboServicio.Name = "comboServicio";
-            comboServicio.Size = new Size(204, 23);
-            comboServicio.TabIndex = 28;
+            listaServicios.FormattingEnabled = true;
+            listaServicios.Location = new Point(103, 165);
+            listaServicios.Name = "listaServicios";
+            listaServicios.Size = new Size(204, 23);
+            listaServicios.TabIndex = 28;
             // 
-            // comboPeluquero
+            // listaPeluqueros
             // 
-            comboPeluquero.FormattingEnabled = true;
-            comboPeluquero.Location = new Point(103, 244);
-            comboPeluquero.Name = "comboPeluquero";
-            comboPeluquero.Size = new Size(204, 23);
-            comboPeluquero.TabIndex = 29;
+            listaPeluqueros.FormattingEnabled = true;
+            listaPeluqueros.Location = new Point(103, 244);
+            listaPeluqueros.Name = "listaPeluqueros";
+            listaPeluqueros.Size = new Size(204, 23);
+            listaPeluqueros.TabIndex = 29;
             // 
             // dateTimePicker1
             // 
@@ -159,9 +159,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 460);
             Controls.Add(dateTimePicker1);
-            Controls.Add(comboPeluquero);
-            Controls.Add(comboServicio);
-            Controls.Add(comboCliente);
+            Controls.Add(listaPeluqueros);
+            Controls.Add(listaServicios);
+            Controls.Add(listaClientes);
             Controls.Add(comboBox1);
             Controls.Add(btnAgregar);
             Controls.Add(btnCancelar);
@@ -188,9 +188,9 @@
         private Button btnCancelar;
         private Button btnAgregar;
         private ComboBox comboBox1;
-        private ComboBox comboCliente;
-        private ComboBox comboServicio;
-        private ComboBox comboPeluquero;
+        private ComboBox listaClientes;
+        private ComboBox listaServicios;
+        private ComboBox listaPeluqueros;
         private DateTimePicker dateTimePicker1;
     }
 }

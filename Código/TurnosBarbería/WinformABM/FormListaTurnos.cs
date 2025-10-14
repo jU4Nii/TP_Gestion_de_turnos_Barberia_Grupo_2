@@ -10,68 +10,73 @@ namespace WinformABM
         public FormListaTurnos()
         {
             InitializeComponent();
-            AgregarColumnasBotones();
-            CargarTurnos();
         }
 
-        private void AgregarColumnasBotones()
+        private void FormListaTurnos_Load(object sender, EventArgs e)
         {
-            // Evita duplicar columnas si ya existen
-            if (listaTurnos.Columns["Modificar"] == null)
-            {
-                var btnModificar = new DataGridViewButtonColumn
-                {
-                    Name = "Modificar",
-                    HeaderText = "Modificar",
-                    Text = "Modificar",
-                    UseColumnTextForButtonValue = true
-                };
-                listaTurnos.Columns.Add(btnModificar);
-            }
-
-            if (listaTurnos.Columns["Eliminar"] == null)
-            {
-                var btnEliminar = new DataGridViewButtonColumn
-                {
-                    Name = "Eliminar",
-                    HeaderText = "Eliminar",
-                    Text = "Eliminar",
-                    UseColumnTextForButtonValue = true
-                };
-                listaTurnos.Columns.Add(btnEliminar);
-            }
+            CargarTurnos();
         }
 
         private void CargarTurnos()
         {
-            listaTurnos.DataSource = null;
-            listaTurnos.DataSource = TurnoRepository.ObtenerTodos();
+            var lista = TurnoRepository.ObtenerTodos();
+            dataGridViewTurnos.DataSource = null;
+            dataGridViewTurnos.DataSource = lista;
+
+            // Opcional: ajustar nombres de columnas
+            dataGridViewTurnos.Columns["Id"].HeaderText = "ID";
+            dataGridViewTurnos.Columns["ClienteId"].HeaderText = "Cliente";
+            dataGridViewTurnos.Columns["ServicioId"].HeaderText = "Servicio";
+            dataGridViewTurnos.Columns["PeluqueroId"].HeaderText = "Peluquero";
+            dataGridViewTurnos.Columns["Fecha"].HeaderText = "Fecha";
         }
 
-        private void listaTurnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex < 0) return;
-
-            var turno = listaTurnos.Rows[e.RowIndex].DataBoundItem as Turno;
-            if (turno == null) return;
-
-            if (listaTurnos.Columns[e.ColumnIndex].Name == "Eliminar")
+            FormAltaTurno formAlta = new FormAltaTurno();
+            if (formAlta.ShowDialog() == DialogResult.OK)
             {
-                TurnoRepository.Eliminar(turno.Id);
-                MessageBox.Show("Turno eliminado correctamente.");
                 CargarTurnos();
             }
-            else if (listaTurnos.Columns[e.ColumnIndex].Name == "Modificar")
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewTurnos.CurrentRow?.DataBoundItem is Turno turno)
             {
-                // Aquí puedes abrir un formulario de edición, por ejemplo:
-                var formModificar = new FormAltaTurno(turno); // Suponiendo que tienes un formulario Alta que acepta un turno
-                if (formModificar.ShowDialog() == DialogResult.OK)
+                FormAltaTurno formEditar = new FormAltaTurno(turno);
+                if (formEditar.ShowDialog() == DialogResult.OK)
                 {
                     CargarTurnos();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un turno para editar.");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewTurnos.CurrentRow?.DataBoundItem is Turno turno)
+            {
+                var resultado = MessageBox.Show("¿Está seguro que desea eliminar el turno?",
+                                                "Confirmar eliminación",
+                                                MessageBoxButtons.YesNo);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    TurnoRepository.Eliminar(turno);
+                    CargarTurnos();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un turno para eliminar.");
             }
         }
 
        
     }
+
 }
