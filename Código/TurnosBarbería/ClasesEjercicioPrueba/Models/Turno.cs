@@ -25,5 +25,10 @@ namespace ClasesEjercicioPrueba.Models
 
         public Servicio Servicio { get; set; }
 
+        public string ClienteNombre => Cliente?.Nombre ?? "";
+        public string ServicioNombre => Servicio?.Nombre ?? "";
+        public string PeluqueroNombre => Peluquero?.Nombre ?? "";
+
+
     }
 }

@@ -1,3 +1,6 @@
+using ClasesEjercicioPrueba.Models;
+using ClasesEjercicioPrueba.Repository;
+
 namespace WinformABM
 {
     internal static class Program
@@ -8,10 +11,26 @@ namespace WinformABM
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new FormAltaTurno());
+            if (!ClienteRepository.ObtenerTodos().Any())
+            {
+                ClienteRepository.Agregar(new Cliente { Nombre = "Roberto Rodriguez", Telefono = "3493549439", Correo = "roberto@gmail.com" });
+                ClienteRepository.Agregar(new Cliente { Nombre = "Juan Perez", Telefono = "3493549439", Correo = "juan@gmail.com" });
+            }
+
+            if (!ServicioRepository.ObtenerTodos().Any())
+            {
+                ServicioRepository.Agregar(new Servicio { Nombre = "Corte", Precio = 100 });
+                ServicioRepository.Agregar(new Servicio { Nombre = "Barba", Precio = 50 });
+                ServicioRepository.Agregar(new Servicio { Nombre = "Tintura", Precio = 200 });
+            }
+
+            if (!PeluqueroRepository.ObtenerTodos().Any())
+            {
+                PeluqueroRepository.Agregar(new Peluquero { Nombre = "Juan Ignacio Bonora", Telefono = "3493549439" });
+                PeluqueroRepository.Agregar(new Peluquero { Nombre = "Mariano Aressi", Telefono = "3493549439" });
+            }
+
+            Application.Run(new FormListaTurnos());
         }
     }
 }

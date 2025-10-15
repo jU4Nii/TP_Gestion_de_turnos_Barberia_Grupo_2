@@ -34,9 +34,7 @@
             label2 = new Label();
             label4 = new Label();
             label5 = new Label();
-            btnCancelar = new Button();
             btnAgregar = new Button();
-            comboBox1 = new ComboBox();
             listaClientes = new ComboBox();
             listaServicios = new ComboBox();
             listaPeluqueros = new ComboBox();
@@ -46,131 +44,119 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(351, 35);
+            label1.Location = new Point(401, 47);
             label1.Name = "label1";
-            label1.Size = new Size(0, 15);
+            label1.Size = new Size(0, 20);
             label1.TabIndex = 2;
             // 
             // Cliente
             // 
             Cliente.AutoSize = true;
-            Cliente.Location = new Point(103, 83);
+            Cliente.Location = new Point(118, 111);
             Cliente.Name = "Cliente";
-            Cliente.Size = new Size(44, 15);
+            Cliente.Size = new Size(55, 20);
             Cliente.TabIndex = 3;
             Cliente.Text = "Cliente";
             // 
             // nuevoturno
             // 
             nuevoturno.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nuevoturno.Location = new Point(303, 25);
+            nuevoturno.Location = new Point(346, 33);
             nuevoturno.Name = "nuevoturno";
-            nuevoturno.Size = new Size(185, 50);
+            nuevoturno.Size = new Size(211, 67);
             nuevoturno.TabIndex = 5;
             nuevoturno.Text = "Nuevo Turno";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(103, 147);
+            label2.Location = new Point(118, 196);
             label2.Name = "label2";
-            label2.Size = new Size(48, 15);
+            label2.Size = new Size(61, 20);
             label2.TabIndex = 9;
             label2.Text = "Servicio";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(103, 226);
+            label4.Location = new Point(118, 301);
             label4.Name = "label4";
-            label4.Size = new Size(61, 15);
+            label4.Size = new Size(75, 20);
             label4.TabIndex = 10;
             label4.Text = "Peluquero";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(103, 309);
+            label5.Location = new Point(118, 412);
             label5.Name = "label5";
-            label5.Size = new Size(38, 15);
+            label5.Size = new Size(47, 20);
             label5.TabIndex = 11;
             label5.Text = "Fecha";
             // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(482, 387);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(106, 20);
-            btnCancelar.TabIndex = 17;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(612, 387);
+            btnAgregar.Location = new Point(699, 516);
+            btnAgregar.Margin = new Padding(3, 4, 3, 4);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(106, 20);
+            btnAgregar.Size = new Size(121, 27);
             btnAgregar.TabIndex = 18;
             btnAgregar.Text = "Guardar";
             btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(518, 192);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 26;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // listaClientes
             // 
             listaClientes.FormattingEnabled = true;
-            listaClientes.Location = new Point(103, 101);
+            listaClientes.Location = new Point(118, 135);
+            listaClientes.Margin = new Padding(3, 4, 3, 4);
             listaClientes.Name = "listaClientes";
-            listaClientes.Size = new Size(536, 23);
+            listaClientes.Size = new Size(612, 28);
             listaClientes.TabIndex = 27;
             // 
             // listaServicios
             // 
             listaServicios.FormattingEnabled = true;
-            listaServicios.Location = new Point(103, 165);
+            listaServicios.Location = new Point(118, 220);
+            listaServicios.Margin = new Padding(3, 4, 3, 4);
             listaServicios.Name = "listaServicios";
-            listaServicios.Size = new Size(204, 23);
+            listaServicios.Size = new Size(233, 28);
             listaServicios.TabIndex = 28;
             // 
             // listaPeluqueros
             // 
             listaPeluqueros.FormattingEnabled = true;
-            listaPeluqueros.Location = new Point(103, 244);
+            listaPeluqueros.Location = new Point(118, 325);
+            listaPeluqueros.Margin = new Padding(3, 4, 3, 4);
             listaPeluqueros.Name = "listaPeluqueros";
-            listaPeluqueros.Size = new Size(204, 23);
+            listaPeluqueros.Size = new Size(233, 28);
             listaPeluqueros.TabIndex = 29;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(103, 327);
+            dateTimePicker1.Location = new Point(118, 436);
+            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(232, 23);
+            dateTimePicker1.Size = new Size(265, 27);
             dateTimePicker1.TabIndex = 30;
             // 
             // FormAltaTurno
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 460);
+            ClientSize = new Size(914, 613);
             Controls.Add(dateTimePicker1);
             Controls.Add(listaPeluqueros);
             Controls.Add(listaServicios);
             Controls.Add(listaClientes);
-            Controls.Add(comboBox1);
             Controls.Add(btnAgregar);
-            Controls.Add(btnCancelar);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(nuevoturno);
             Controls.Add(Cliente);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormAltaTurno";
             Text = "Form1";
             Load += FormAltaTurno_Load;
@@ -185,9 +171,7 @@
         private Label label2;
         private Label label4;
         private Label label5;
-        private Button btnCancelar;
         private Button btnAgregar;
-        private ComboBox comboBox1;
         private ComboBox listaClientes;
         private ComboBox listaServicios;
         private ComboBox listaPeluqueros;

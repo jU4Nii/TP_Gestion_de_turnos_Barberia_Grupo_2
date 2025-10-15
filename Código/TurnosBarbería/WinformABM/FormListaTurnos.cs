@@ -14,6 +14,30 @@ namespace WinformABM
 
         private void FormListaTurnos_Load(object sender, EventArgs e)
         {
+            dataGridViewTurnos.AutoGenerateColumns = false;
+            dataGridViewTurnos.Columns.Clear();
+
+            dataGridViewTurnos.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Cliente",
+                DataPropertyName = "ClienteNombre"
+            });
+            dataGridViewTurnos.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Servicio",
+                DataPropertyName = "ServicioNombre"
+            });
+            dataGridViewTurnos.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Peluquero",
+                DataPropertyName = "PeluqueroNombre"
+            });
+            dataGridViewTurnos.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Fecha",
+                DataPropertyName = "Fecha"
+            });
+
             CargarTurnos();
         }
 
@@ -23,12 +47,6 @@ namespace WinformABM
             dataGridViewTurnos.DataSource = null;
             dataGridViewTurnos.DataSource = lista;
 
-            // Opcional: ajustar nombres de columnas
-            dataGridViewTurnos.Columns["Id"].HeaderText = "ID";
-            dataGridViewTurnos.Columns["ClienteId"].HeaderText = "Cliente";
-            dataGridViewTurnos.Columns["ServicioId"].HeaderText = "Servicio";
-            dataGridViewTurnos.Columns["PeluqueroId"].HeaderText = "Peluquero";
-            dataGridViewTurnos.Columns["Fecha"].HeaderText = "Fecha";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -44,7 +62,8 @@ namespace WinformABM
         {
             if (dataGridViewTurnos.CurrentRow?.DataBoundItem is Turno turno)
             {
-                FormAltaTurno formEditar = new FormAltaTurno(turno);
+              
+                FormAltaTurno formEditar = new FormAltaTurno(turno.Id);
                 if (formEditar.ShowDialog() == DialogResult.OK)
                 {
                     CargarTurnos();
@@ -55,6 +74,7 @@ namespace WinformABM
                 MessageBox.Show("Seleccione un turno para editar.");
             }
         }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -74,6 +94,12 @@ namespace WinformABM
             {
                 MessageBox.Show("Seleccione un turno para eliminar.");
             }
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            FormFiltradoPorPeluquero reporte = new FormFiltradoPorPeluquero();
+            reporte.ShowDialog(); 
         }
 
        
