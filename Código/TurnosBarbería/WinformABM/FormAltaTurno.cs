@@ -30,7 +30,7 @@ namespace WinformABM
             listaClientes.DisplayMember = "Nombre";
             listaClientes.ValueMember = "Id";
 
-            listaServicios.DisplayMember = "Descripcion";
+            listaServicios.DisplayMember = "Nombre";
             listaServicios.ValueMember = "Id";
 
             listaPeluqueros.DisplayMember = "Nombre";
@@ -83,11 +83,11 @@ namespace WinformABM
                 return;
             }
 
-            
+
             DateTime fechaSeleccionada = dateTimePickerFecha.Value.Date;
             TimeOnly horaSeleccionada = TimeOnly.FromDateTime(dateTimePickerHora.Value);
 
-            
+
             var turnosExistentes = TurnoRepository.ObtenerTodos();
             bool turnoPisado = turnosExistentes.Any(t =>
     t.PeluqueroId == peluquero.Id &&
@@ -105,7 +105,7 @@ namespace WinformABM
             }
 
 
-            
+
             if (turnoEditando != null)
             {
                 turnoEditando.ClienteId = cliente.Id;

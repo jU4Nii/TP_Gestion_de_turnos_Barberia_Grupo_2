@@ -1,7 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
 using ClasesEjercicioPrueba.Data1;
 using ClasesEjercicioPrueba.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ClasesEjercicioPrueba.Repository
 {
@@ -33,15 +34,24 @@ namespace ClasesEjercicioPrueba.Repository
             context.SaveChanges();
         }
 
-        public static void Eliminar(int id)
+        public static void Eliminar(int clienteId)
         {
             using var context = new ApplicationDbContext();
-            var cliente = context.listaClientes.Find(id);
+
+            var cliente = context.listaClientes
+                .Include(c => c.Turnos) 
+                .FirstOrDefault(c => c.Id == clienteId);
+
             if (cliente != null)
             {
+                context.listaTurnos.RemoveRange(cliente.Turnos);
+
                 context.listaClientes.Remove(cliente);
+
                 context.SaveChanges();
             }
         }
+
+
     }
 }

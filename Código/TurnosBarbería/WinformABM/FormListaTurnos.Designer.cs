@@ -24,6 +24,10 @@
             btnEliminar = new Button();
             dataGridViewTurnos = new DataGridView();
             btnReporte = new Button();
+            btnAgregarCliente = new Button();
+            btnEditarCliente = new Button();
+            btnEliminarCliente = new Button();
+            ListBoxListaClientes = new ListBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTurnos).BeginInit();
             SuspendLayout();
             // 
@@ -31,11 +35,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(485, 37);
+            label2.Location = new Point(405, 39);
             label2.Name = "label2";
-            label2.Size = new Size(170, 62);
+            label2.Size = new Size(349, 62);
             label2.TabIndex = 3;
-            label2.Text = "Turnos";
+            label2.Text = "BarberManager";
             // 
             // label3
             // 
@@ -99,11 +103,53 @@
             btnReporte.UseVisualStyleBackColor = true;
             btnReporte.Click += btnReporte_Click;
             // 
+            // btnAgregarCliente
+            // 
+            btnAgregarCliente.Location = new Point(821, 367);
+            btnAgregarCliente.Name = "btnAgregarCliente";
+            btnAgregarCliente.Size = new Size(170, 29);
+            btnAgregarCliente.TabIndex = 12;
+            btnAgregarCliente.Text = "Añadir nuevo cliente";
+            btnAgregarCliente.UseVisualStyleBackColor = true;
+            btnAgregarCliente.Click += btnAgregarCliente_Click;
+            // 
+            // btnEditarCliente
+            // 
+            btnEditarCliente.Location = new Point(918, 145);
+            btnEditarCliente.Name = "btnEditarCliente";
+            btnEditarCliente.Size = new Size(170, 29);
+            btnEditarCliente.TabIndex = 13;
+            btnEditarCliente.Text = "Editar cliente";
+            btnEditarCliente.UseVisualStyleBackColor = true;
+            btnEditarCliente.Click += btnEditarCliente_Click;
+            // 
+            // btnEliminarCliente
+            // 
+            btnEliminarCliente.Location = new Point(742, 145);
+            btnEliminarCliente.Name = "btnEliminarCliente";
+            btnEliminarCliente.Size = new Size(170, 29);
+            btnEliminarCliente.TabIndex = 14;
+            btnEliminarCliente.Text = "Eliminar cliente";
+            btnEliminarCliente.UseVisualStyleBackColor = true;
+            btnEliminarCliente.Click += btnEliminarCliente_Click;
+            // 
+            // ListBoxListaClientes
+            // 
+            ListBoxListaClientes.FormattingEnabled = true;
+            ListBoxListaClientes.Location = new Point(742, 180);
+            ListBoxListaClientes.Name = "ListBoxListaClientes";
+            ListBoxListaClientes.Size = new Size(350, 164);
+            ListBoxListaClientes.TabIndex = 15;
+            // 
             // FormListaTurnos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1139, 600);
+            Controls.Add(ListBoxListaClientes);
+            Controls.Add(btnEliminarCliente);
+            Controls.Add(btnEditarCliente);
+            Controls.Add(btnAgregarCliente);
             Controls.Add(btnReporte);
             Controls.Add(dataGridViewTurnos);
             Controls.Add(btnEliminar);
@@ -128,5 +174,9 @@
         private Button btnEliminar;
         private DataGridView dataGridViewTurnos;
         private Button btnReporte;
+        private Button btnAgregarCliente;
+        private Button btnEditarCliente;
+        private Button btnEliminarCliente;
+        private ListBox ListBoxListaClientes;
     }
 }

@@ -11,12 +11,6 @@ namespace WinformABM
         [STAThread]
         static void Main()
         {
-            if (!ClienteRepository.ObtenerTodos().Any())
-            {
-                ClienteRepository.Agregar(new Cliente { Nombre = "Roberto Rodriguez", Telefono = "3493549439", Correo = "roberto@gmail.com" });
-                ClienteRepository.Agregar(new Cliente { Nombre = "Juan Perez", Telefono = "3493549439", Correo = "juan@gmail.com" });
-            }
-
             if (!ServicioRepository.ObtenerTodos().Any())
             {
                 ServicioRepository.Agregar(new Servicio { Nombre = "Corte", Precio = 100 });

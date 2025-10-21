@@ -16,5 +16,8 @@ namespace ClasesEjercicioPrueba.Models
 
         public string Correo { get; set; }
 
+        public List<Turno> Turnos { get; set; } = new();
+
+
     }
 }
