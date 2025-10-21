@@ -14,7 +14,7 @@ namespace WinformABM
             CargarDatosIniciales();
         }
 
-       
+
         public FormAltaTurno(int turnoId) : this()
         {
             turnoEditando = TurnoRepository.ObtenerPorId(turnoId);
@@ -41,8 +41,11 @@ namespace WinformABM
                 listaClientes.SelectedValue = turnoEditando.ClienteId;
                 listaServicios.SelectedValue = turnoEditando.ServicioId;
                 listaPeluqueros.SelectedValue = turnoEditando.PeluqueroId;
-                dateTimePicker1.Value = turnoEditando.Fecha;
+
+                dateTimePickerFecha.Value = turnoEditando.Fecha;
+                dateTimePickerHora.Value = DateTime.Today.Add(turnoEditando.Hora.ToTimeSpan());
             }
+
             else
             {
                 listaClientes.SelectedIndex = -1;
@@ -53,12 +56,12 @@ namespace WinformABM
 
 
 
-      
+
 
 
         private void CargarDatosIniciales()
         {
-           
+
             listaClientes.DataSource = ClienteRepository.ObtenerTodos();
             listaServicios.DataSource = ServicioRepository.ObtenerTodos();
             listaPeluqueros.DataSource = PeluqueroRepository.ObtenerTodos();
@@ -80,26 +83,49 @@ namespace WinformABM
                 return;
             }
 
+            
+            DateTime fechaSeleccionada = dateTimePickerFecha.Value.Date;
+            TimeOnly horaSeleccionada = TimeOnly.FromDateTime(dateTimePickerHora.Value);
+
+            
+            var turnosExistentes = TurnoRepository.ObtenerTodos();
+            bool turnoPisado = turnosExistentes.Any(t =>
+    t.PeluqueroId == peluquero.Id &&
+    t.Fecha.Date == fechaSeleccionada.Date &&
+    t.Hora.Hour == horaSeleccionada.Hour &&
+    t.Hora.Minute == horaSeleccionada.Minute &&
+    (turnoEditando == null || t.Id != turnoEditando.Id)
+);
+
+
+            if (turnoPisado)
+            {
+                MessageBox.Show("Ya existe un turno para ese peluquero en esa fecha y hora.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            
             if (turnoEditando != null)
             {
-          
                 turnoEditando.ClienteId = cliente.Id;
                 turnoEditando.ServicioId = servicio.Id;
                 turnoEditando.PeluqueroId = peluquero.Id;
-                turnoEditando.Fecha = dateTimePicker1.Value;
+                turnoEditando.Fecha = fechaSeleccionada;
+                turnoEditando.Hora = horaSeleccionada;
 
                 TurnoRepository.Actualizar(turnoEditando);
                 MessageBox.Show("Turno modificado correctamente.");
             }
             else
             {
-               
                 var nuevoTurno = new Turno
                 {
                     ClienteId = cliente.Id,
                     ServicioId = servicio.Id,
                     PeluqueroId = peluquero.Id,
-                    Fecha = dateTimePicker1.Value
+                    Fecha = fechaSeleccionada,
+                    Hora = horaSeleccionada
                 };
 
                 TurnoRepository.Agregar(nuevoTurno);
@@ -109,5 +135,7 @@ namespace WinformABM
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        
     }
 }

@@ -58,7 +58,7 @@
             dataGridViewTurnos.Location = new Point(133, 141);
             dataGridViewTurnos.Name = "dataGridViewTurnos";
             dataGridViewTurnos.RowHeadersWidth = 51;
-            dataGridViewTurnos.Size = new Size(300, 188);
+            dataGridViewTurnos.Size = new Size(662, 188);
             dataGridViewTurnos.TabIndex = 2;
             // 
             // btnFiltrar

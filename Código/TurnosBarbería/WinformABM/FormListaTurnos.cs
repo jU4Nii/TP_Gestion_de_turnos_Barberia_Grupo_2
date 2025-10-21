@@ -37,6 +37,14 @@ namespace WinformABM
                 HeaderText = "Fecha",
                 DataPropertyName = "Fecha"
             });
+            dataGridViewTurnos.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Hora",
+                DataPropertyName = "Hora"
+            });
+
+           
+
 
             CargarTurnos();
         }

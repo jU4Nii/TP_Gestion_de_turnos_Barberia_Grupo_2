@@ -86,7 +86,7 @@
             dataGridViewTurnos.Margin = new Padding(3, 4, 3, 4);
             dataGridViewTurnos.Name = "dataGridViewTurnos";
             dataGridViewTurnos.RowHeadersWidth = 51;
-            dataGridViewTurnos.Size = new Size(491, 200);
+            dataGridViewTurnos.Size = new Size(650, 200);
             dataGridViewTurnos.TabIndex = 10;
             // 
             // btnReporte

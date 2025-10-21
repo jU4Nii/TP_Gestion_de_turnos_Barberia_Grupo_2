@@ -13,6 +13,8 @@ namespace ClasesEjercicioPrueba.Models
 
         public DateTime Fecha { get; set; }
 
+        public TimeOnly Hora { get; set; }
+
         public int PeluqueroId { get; set; }
 
         public Peluquero Peluquero { get; set; }

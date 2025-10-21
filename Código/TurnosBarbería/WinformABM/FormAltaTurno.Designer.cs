@@ -38,7 +38,9 @@
             listaClientes = new ComboBox();
             listaServicios = new ComboBox();
             listaPeluqueros = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
+            dateTimePickerFecha = new DateTimePicker();
+            dateTimePickerHora = new DateTimePicker();
+            label3 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -132,20 +134,41 @@
             listaPeluqueros.Size = new Size(233, 28);
             listaPeluqueros.TabIndex = 29;
             // 
-            // dateTimePicker1
+            // dateTimePickerFecha
             // 
-            dateTimePicker1.Location = new Point(118, 436);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(265, 27);
-            dateTimePicker1.TabIndex = 30;
+            dateTimePickerFecha.Location = new Point(118, 436);
+            dateTimePickerFecha.Margin = new Padding(3, 4, 3, 4);
+            dateTimePickerFecha.Name = "dateTimePickerFecha";
+            dateTimePickerFecha.Size = new Size(265, 27);
+            dateTimePickerFecha.TabIndex = 30;
+            // 
+            // dateTimePickerHora
+            // 
+            dateTimePickerHora.Format = DateTimePickerFormat.Time;
+            dateTimePickerHora.Location = new Point(435, 436);
+            dateTimePickerHora.Margin = new Padding(3, 4, 3, 4);
+            dateTimePickerHora.Name = "dateTimePickerHora";
+            dateTimePickerHora.ShowUpDown = true;
+            dateTimePickerHora.Size = new Size(265, 27);
+            dateTimePickerHora.TabIndex = 31;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(435, 412);
+            label3.Name = "label3";
+            label3.Size = new Size(42, 20);
+            label3.TabIndex = 32;
+            label3.Text = "Hora";
             // 
             // FormAltaTurno
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 613);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(label3);
+            Controls.Add(dateTimePickerHora);
+            Controls.Add(dateTimePickerFecha);
             Controls.Add(listaPeluqueros);
             Controls.Add(listaServicios);
             Controls.Add(listaClientes);
@@ -175,6 +198,8 @@
         private ComboBox listaClientes;
         private ComboBox listaServicios;
         private ComboBox listaPeluqueros;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePickerFecha;
+        private DateTimePicker dateTimePickerHora;
+        private Label label3;
     }
 }
