@@ -32,6 +32,7 @@
             label1 = new Label();
             dataGridViewTurnos = new DataGridView();
             btnFiltrar = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTurnos).BeginInit();
             SuspendLayout();
             // 
@@ -71,11 +72,22 @@
             btnFiltrar.UseVisualStyleBackColor = true;
             btnFiltrar.Click += btnFiltrar_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 20F);
+            label2.Location = new Point(307, 27);
+            label2.Name = "label2";
+            label2.Size = new Size(358, 46);
+            label2.TabIndex = 4;
+            label2.Text = "Filtrado por peluquero";
+            // 
             // FormFiltradoPorPeluquero
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(941, 516);
+            Controls.Add(label2);
             Controls.Add(btnFiltrar);
             Controls.Add(dataGridViewTurnos);
             Controls.Add(label1);
@@ -94,5 +106,6 @@
         private Label label1;
         private DataGridView dataGridViewTurnos;
         private Button btnFiltrar;
+        private Label label2;
     }
 }

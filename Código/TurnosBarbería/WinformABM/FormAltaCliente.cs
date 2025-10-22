@@ -106,7 +106,13 @@ namespace WinformABM
             }
 
             this.DialogResult = DialogResult.OK;
-            
+
+            if (clienteEditando != null && this.Owner is FormListaTurnos formLista)
+            {
+                formLista.CargarTurnosPorFecha(formLista.dtpFiltrarFecha.Value);
+            }
+
+
             this.Close();
         }
 

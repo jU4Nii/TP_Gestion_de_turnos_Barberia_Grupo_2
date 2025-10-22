@@ -48,6 +48,7 @@ namespace WinformABM
 
             CargarClientes();
             CargarTurnos();
+            CargarTurnosPorFecha(DateTime.Today);
         }
 
         private void CargarTurnos()
@@ -61,9 +62,11 @@ namespace WinformABM
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FormAltaTurno formAlta = new FormAltaTurno();
+            formAlta.Owner = this;
             if (formAlta.ShowDialog() == DialogResult.OK)
             {
                 CargarTurnos();
+                CargarTurnosPorFecha(dtpFiltrarFecha.Value);
             }
         }
 
@@ -73,9 +76,11 @@ namespace WinformABM
             {
 
                 FormAltaTurno formEditar = new FormAltaTurno(turno.Id);
+                formEditar.Owner = this;
                 if (formEditar.ShowDialog() == DialogResult.OK)
                 {
                     CargarTurnos();
+                    CargarTurnosPorFecha(dtpFiltrarFecha.Value);
                 }
             }
             else
@@ -103,6 +108,7 @@ namespace WinformABM
             {
                 MessageBox.Show("Seleccione un turno para eliminar.");
             }
+            CargarTurnosPorFecha(dtpFiltrarFecha.Value);
         }
 
         private void btnReporte_Click(object sender, EventArgs e)
@@ -124,6 +130,7 @@ namespace WinformABM
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
             FormAltaCliente formAlta = new FormAltaCliente();
+            formAlta.Owner = this;
             if (formAlta.ShowDialog() == DialogResult.OK)
             {
                 CargarClientes();
@@ -141,10 +148,12 @@ namespace WinformABM
             }
 
             FormAltaCliente formAlta = new FormAltaCliente(clienteSeleccionado.Id);
+            formAlta.Owner = this;
             if (formAlta.ShowDialog() == DialogResult.OK)
             {
                 CargarTurnos();
                 CargarClientes();
+                CargarTurnosPorFecha(dtpFiltrarFecha.Value);
             }
         }
 
@@ -170,11 +179,34 @@ namespace WinformABM
                 ClienteRepository.Eliminar(clienteSeleccionado.Id);
                 CargarTurnos();
                 CargarClientes();
+                CargarTurnosPorFecha(dtpFiltrarFecha.Value);
 
             }
         }
 
-       
+        public void CargarTurnosPorFecha(DateTime fecha)
+        {
+            var turnos = TurnoRepository.ObtenerTodos()
+                .Where(t => t.Fecha.Date == fecha.Date)
+                .Select(t => new
+                {
+                    Cliente = t.Cliente.Nombre,
+                    Peluquero = t.Peluquero.Nombre,
+                    Servicio = t.Servicio.Nombre,
+                    Hora = t.Hora.ToString(@"hh\:mm") // si Hora es TimeSpan
+                })
+                .ToList();
+
+            dataGridViewFiltroTurnos.DataSource = turnos;
+        }
+
+        private void btnFiltrarTurnos_Click(object sender, EventArgs e)
+        {
+            CargarTurnosPorFecha(dtpFiltrarFecha.Value);
+        }
+
+
+
     }
 
 }

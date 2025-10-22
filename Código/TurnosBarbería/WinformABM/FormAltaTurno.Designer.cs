@@ -63,9 +63,9 @@
             // nuevoturno
             // 
             nuevoturno.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nuevoturno.Location = new Point(346, 33);
+            nuevoturno.Location = new Point(342, 24);
             nuevoturno.Name = "nuevoturno";
-            nuevoturno.Size = new Size(211, 67);
+            nuevoturno.Size = new Size(241, 67);
             nuevoturno.TabIndex = 5;
             nuevoturno.Text = "Nuevo Turno";
             // 

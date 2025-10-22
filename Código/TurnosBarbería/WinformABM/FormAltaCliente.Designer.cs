@@ -36,6 +36,7 @@
             label4 = new Label();
             btnCancelar = new Button();
             btnGuardar = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // txtNombre
@@ -106,11 +107,22 @@
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 20F);
+            label2.Location = new Point(323, 27);
+            label2.Name = "label2";
+            label2.Size = new Size(192, 46);
+            label2.TabIndex = 10;
+            label2.Text = "Alta Cliente";
+            // 
             // FormAltaCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
             Controls.Add(btnGuardar);
             Controls.Add(btnCancelar);
             Controls.Add(label4);
@@ -136,5 +148,6 @@
         private Label label4;
         private Button btnCancelar;
         private Button btnGuardar;
+        private Label label2;
     }
 }

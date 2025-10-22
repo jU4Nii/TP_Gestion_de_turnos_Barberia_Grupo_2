@@ -132,6 +132,11 @@ namespace WinformABM
                 MessageBox.Show("Turno guardado correctamente.");
             }
 
+            if (this.Owner is FormListaTurnos formLista)
+            {
+                formLista.CargarTurnosPorFecha(formLista.dtpFiltrarFecha.Value);
+            }
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

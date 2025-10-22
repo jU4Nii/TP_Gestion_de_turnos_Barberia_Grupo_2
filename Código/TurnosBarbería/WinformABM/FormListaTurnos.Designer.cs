@@ -28,7 +28,13 @@
             btnEditarCliente = new Button();
             btnEliminarCliente = new Button();
             ListBoxListaClientes = new ListBox();
+            dtpFiltrarFecha = new DateTimePicker();
+            ClientesLabel = new Label();
+            label1 = new Label();
+            dataGridViewFiltroTurnos = new DataGridView();
+            btnFiltrarTurnos = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTurnos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFiltroTurnos).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -105,7 +111,7 @@
             // 
             // btnAgregarCliente
             // 
-            btnAgregarCliente.Location = new Point(821, 367);
+            btnAgregarCliente.Location = new Point(833, 367);
             btnAgregarCliente.Name = "btnAgregarCliente";
             btnAgregarCliente.Size = new Size(170, 29);
             btnAgregarCliente.TabIndex = 12;
@@ -115,7 +121,7 @@
             // 
             // btnEditarCliente
             // 
-            btnEditarCliente.Location = new Point(918, 145);
+            btnEditarCliente.Location = new Point(964, 145);
             btnEditarCliente.Name = "btnEditarCliente";
             btnEditarCliente.Size = new Size(170, 29);
             btnEditarCliente.TabIndex = 13;
@@ -138,14 +144,63 @@
             ListBoxListaClientes.FormattingEnabled = true;
             ListBoxListaClientes.Location = new Point(742, 180);
             ListBoxListaClientes.Name = "ListBoxListaClientes";
-            ListBoxListaClientes.Size = new Size(350, 164);
+            ListBoxListaClientes.Size = new Size(392, 164);
             ListBoxListaClientes.TabIndex = 15;
+            // 
+            // dtpFiltrarFecha
+            // 
+            dtpFiltrarFecha.Location = new Point(742, 455);
+            dtpFiltrarFecha.Name = "dtpFiltrarFecha";
+            dtpFiltrarFecha.Size = new Size(272, 27);
+            dtpFiltrarFecha.TabIndex = 16;
+            // 
+            // ClientesLabel
+            // 
+            ClientesLabel.AutoSize = true;
+            ClientesLabel.Location = new Point(869, 110);
+            ClientesLabel.Name = "ClientesLabel";
+            ClientesLabel.Size = new Size(134, 20);
+            ClientesLabel.TabIndex = 19;
+            ClientesLabel.Text = "Gestión de clientes";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(848, 428);
+            label1.Name = "label1";
+            label1.Size = new Size(117, 20);
+            label1.TabIndex = 20;
+            label1.Text = "Reportes diarios";
+            // 
+            // dataGridViewFiltroTurnos
+            // 
+            dataGridViewFiltroTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewFiltroTurnos.Location = new Point(742, 488);
+            dataGridViewFiltroTurnos.Name = "dataGridViewFiltroTurnos";
+            dataGridViewFiltroTurnos.RowHeadersWidth = 51;
+            dataGridViewFiltroTurnos.Size = new Size(392, 188);
+            dataGridViewFiltroTurnos.TabIndex = 21;
+            // 
+            // btnFiltrarTurnos
+            // 
+            btnFiltrarTurnos.Location = new Point(742, 682);
+            btnFiltrarTurnos.Name = "btnFiltrarTurnos";
+            btnFiltrarTurnos.Size = new Size(105, 29);
+            btnFiltrarTurnos.TabIndex = 22;
+            btnFiltrarTurnos.Text = "Filtrar";
+            btnFiltrarTurnos.UseVisualStyleBackColor = true;
+            btnFiltrarTurnos.Click += btnFiltrarTurnos_Click;
             // 
             // FormListaTurnos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1139, 600);
+            ClientSize = new Size(1177, 746);
+            Controls.Add(btnFiltrarTurnos);
+            Controls.Add(dataGridViewFiltroTurnos);
+            Controls.Add(label1);
+            Controls.Add(ClientesLabel);
+            Controls.Add(dtpFiltrarFecha);
             Controls.Add(ListBoxListaClientes);
             Controls.Add(btnEliminarCliente);
             Controls.Add(btnEditarCliente);
@@ -162,6 +217,7 @@
             Text = "BajaModificacion";
             Load += FormListaTurnos_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewTurnos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFiltroTurnos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -178,5 +234,10 @@
         private Button btnEditarCliente;
         private Button btnEliminarCliente;
         private ListBox ListBoxListaClientes;
+        public DateTimePicker dtpFiltrarFecha;
+        private Label ClientesLabel;
+        private Label label1;
+        private DataGridView dataGridViewFiltroTurnos;
+        private Button btnFiltrarTurnos;
     }
 }
